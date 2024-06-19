@@ -1,0 +1,260 @@
+/* <=========================================> SETUP CSS <=========================================>*/
+:root{
+    --white-color: #ffff;
+    --blue-color: #0B60B0;
+    --black-color: #151515;
+    --silver-color: #EEEEEE;
+}
+
+/* <=========================================> COMPONENT NAVIGASI <=========================================>*/
+.navbar{
+    background: transparent;
+}
+.navbar-brand{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white-color);
+}
+.navbar-brand:hover{
+    color: var(--blue-color);
+}
+.navbar-link{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white-color);
+}
+.navbar-link:hover{
+    color: var(--blue-color);
+}
+.navbar-logo{
+    width: 58px;
+    height: 56px;
+    margin-right: 13px;
+}
+
+/* <=========================================> COMPONENT HOME <=========================================>*/
+.clas-home{
+   background-image: url('../assets/bgHome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home-judul h1{
+   font-size: 24px;
+   font-weight: 600;
+   color: var(--white-color);
+   text-align: justify;
+}
+.home-buttons{
+    margin-top: 1.5rem;
+}
+.home-buttons .btn{
+    background: var(--blue-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.home-buttons .btn:hover{
+    background: var(--black-color);
+    color: var(--white-color);
+    border: 2px solid var(--blue-color);    
+}
+
+/* <=========================================> COMPONENT BOOK AVAILABLE <=========================================>*/
+.clas-bookavailable .form-search{
+    margin-top: -1.3rem;
+}
+.bookavailable-input input{
+    padding: 10px;
+    border: 1px solid var(--blue-color);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.bookavailable-input input:active, .bookavailable-input input:focus{
+    border: 2px solid var(--black-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.bookavailable-button .btn-search{
+    background: var(--blue-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+.bookavailable-button .btn-search:hover{
+    background: var(--white-color);
+    color: var(--black-color);
+    border: 2px solid var(--blue-color);
+}
+.bookavailable-eye{
+    font-size: 1.3rem;
+}
+.clas-bookavailable{
+    margin-bottom: 3rem;
+}
+
+/* edit table */
+.bookavailable-table{
+    margin-top: 7rem;
+}
+.bookavailable-table table{
+    margin-top: 2rem;
+}
+.bookavailable-table h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* <=========================================> COMPONENT FOOTER <=========================================>*/
+.clas-footer{
+    background: var(--silver-color);
+    padding: 20px 0;
+}
+.footer-text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.footer-text h6{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+.footer-text p{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--black-color);
+}
+.footer-icon .icons-ig{
+    font-size: 1.7rem;
+    /* buatkan background warna mirip seperti instagram 2 warna memiliki gradient */
+    background: linear-gradient(45deg, #8603FB, #FC00D9, #FF073E, #FE6500, #FFBA08);
+    /* background: ; */
+    border-radius: 5px;
+    color: var(--white-color);
+
+}
+.footer-icon .icons-twitter{
+    font-size: 1.7rem;
+}
+
+.footer-icon .icons-tiktok{
+    font-size: 1.7rem;
+    background: #010101;
+    border-radius: 50%;
+    padding: 2px;
+    color: var(--white-color);
+}
+.footer-icon .icons-wa {
+    font-size: 1.7rem;
+    background: #25D366;
+    border-radius: 50%;
+    padding: 1px;
+    color: var(--white-color);
+}
+
+/* <=========================================> CSS NAVBAR KETIKA DI SCROLL KELUAR BG<=========================================>*/
+.nav-color{
+    background: var(--white-color);
+    transition: ease-in 0.2s;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+.nav-transparent{
+    background: transparent;
+    transition: ease-out 0.5s;
+}   
+.nav-color .navbar-brand{
+    color: var(--black-color);
+}
+.nav-color .navbar-link{
+    color: var(--black-color);
+}
+
+/* <=========================================> PAGE ADD BOOKS <=========================================>*/
+
+.form-group {
+    margin-top: 1rem;
+}
+.form-group label{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black-color);
+}
+.form-group input{
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    background: #D9D9D9;
+}
+.form-group input:active, .form-group input:focus{
+    border: 2px solid var(--blue-color);
+    box-shadow: none;
+    background-color: #D9D9D9;
+}
+.img h3{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--black-color);
+    margin-top: -3rem;
+}
+
+/* <=========================================> PAGE NAVIGASI BACK <=========================================>*/
+.navigasiback-nav{
+    background: var(--white-color);
+}
+.navigasiback-brand {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+.navigasiback-brand .icon{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+/* <=========================================> PAGE DETAIL BUKU <=========================================>*/
+.detailbuku-content{
+    margin-top: 2rem;
+
+}
+.detailbuku-table .line{
+    border-bottom: 1px solid var(--black-color);
+}
+.detailbuku-table .line-desc{
+    border-bottom: 1px solid var(--black-color);
+    margin-top: 2rem;
+}
+.line-desc .line-title{
+    font-weight: 600;
+    color: var(--black-color);
+}
+.line-desc .line-text{
+    font-weight: 400;
+    color: var(--black-color);
+}
+.line-btn{
+    margin-top: 1rem;
+}
+.line-btn .btn{
+    background: var(--blue-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 7px 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.line-btn .btn:hover{
+    background: var(--white-color);
+    color: var(--black-color);
+    border: 2px solid var(--blue-color);
+    font-weight: 500;
+}
