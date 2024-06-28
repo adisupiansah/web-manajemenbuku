@@ -11,12 +11,21 @@ const BooksProvider = ({children}) => {
     const [books, setBooks] = useState([]); 
 
     useEffect(() => {
-        axios.get(API_URL)
+        axios.get(`${API_URL}/dbmanajemen.json`)
         .then((response) => {
-            setBooks(response.data);
+            const data = response.data;
+            if(data){
+                const booksArray = Object.entries(data).map(([key, value]) => {
+                    return {
+                        id: key,
+                        ...value
+                    }
+                })
+                setBooks(booksArray)
+            }
         })
         .catch((error) => {
-            console.log('Error:', error);
+            console.error('woy error:', error)
         })
     }, [])
 

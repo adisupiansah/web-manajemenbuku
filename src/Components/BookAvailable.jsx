@@ -74,7 +74,7 @@ const BookAvailable = () => {
                 <tbody>
                   {books.map((book, index) => (
                     <tr key={index}>
-                      <td className="text-center">{book.id}</td>
+                      <td className="text-center">{book.nobuku}</td>
                       <td className="text-center">{book.namabuku}</td>
                       <td className="text-center">{book.penulisbuku}</td>
                       <td className="text-center">{book.penerbitbuku}</td>

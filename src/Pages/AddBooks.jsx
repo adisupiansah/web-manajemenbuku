@@ -8,11 +8,12 @@ import { API_URL } from "../Format/API";
 const AddBooks = () => {
   // state untuk form input dan datanya akan dikirimkan ke db.json
   const [bookData, setBookData] = useState({
-    id: "",
+
+    nobuku: '',
     namabuku: "",
     penulisbuku: "",
-    penerbitbuku: "", 
-    tahunterbit: "",
+    penerbitbuku: "",
+    tahunterbit: '',
     banyakhalaman: "",
     bahasabuku: "",
     linkdownload: ""
@@ -29,20 +30,28 @@ const AddBooks = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // kirim data ke db.json
-    axios.post(API_URL, bookData)
+
+    // ubah data nobuku dan tahunterbit menjadi number
+    const formatedBookData = {
+      ...bookData,
+      nobuku: parseInt(bookData.nobuku, 10),
+      tahunterbit: parseInt(bookData.tahunterbit, 10),
+    }
+    
+    axios.post(`${API_URL}/dbmanajemen.json`, formatedBookData)
     .then(() => {
       setMessage("Data berhasil ditambahkan")
       clearForm();
     })
     .catch (error => {
-      console.log('Error:', error)
+      console.log('Data gagal ditambahkan ini ada error pak:', error)
     })
   }
 
   // ketika di submit, form akan kosong
   const clearForm = () => {
     setBookData({
-      id: "",
+      nobuku: "",
       namabuku: "",
       penulisbuku: "",
       penerbitbuku: "", 
@@ -75,7 +84,7 @@ const AddBooks = () => {
                   }
                     <div className="form-group d-flex">
                         <label htmlFor="namabuku" className="col-md-4">ID buku</label>
-                        <input type="number" name="id" id="namabuku" value={bookData.id} className="form-control" onChange={handleChange} required/>
+                        <input type="number" name="nobuku" id="namabuku" value={bookData.nobuku} className="form-control" onChange={handleChange} required/>
                     </div>
                     <div className="form-group d-flex">
                         <label htmlFor="namabuku" className="col-md-4">Nama buku</label>

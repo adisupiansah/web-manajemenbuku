@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:8080/books';
+export const API_URL = 'https://dbwebmanajemenbuku-default-rtdb.firebaseio.com';

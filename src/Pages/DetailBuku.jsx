@@ -66,7 +66,7 @@ const DetailBuku = () => {
                                 <p className='line-title'>Penerbit Buku</p>
                             </div>
                             <div className="col-md-">
-                                <p className='line-text'>{book.penulisbuku}</p>
+                                <p className='line-text'>{book.penerbitbuku}</p>
                             </div>
                         </div>
                         <div className="col-md-12 line-desc d-flex">

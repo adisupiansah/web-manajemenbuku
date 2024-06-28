@@ -18,7 +18,7 @@ const EditBooks = () => {
   // ambil data buku dari context dan buatkan state untuk edit data buku berdasarkan id
   const {books, setBooks} = useContext(BooksContext)
   const [editBook, setEditBook] = useState({
-    id: '',
+    nobuku: '',
     namabuku: '',
     penulisbuku: '',
     penerbitbuku: '',
@@ -46,14 +46,16 @@ const EditBooks = () => {
   // axios untuk mengedit data
   const updateBook = async () => {
     try {
-      await axios.put(API_URL + `/${id}`, editBook);
-      setBooks ((prevBooks) =>
-        prevBooks.map((book) => 
+      await axios.put(`${API_URL}/dbmanajemen/${id}.json`, editBook)
+      if(editBook) {
+        const updatedBooks = books.map((book) => (
           book.id === id ? editBook : book
-        )
-      );
-    } catch (error) {
-      console.error(error);
+        ))
+        setBooks(updatedBooks)
+      }
+    } 
+    catch (error) {
+     console.error('ada error:', error);
     }
   };
 
@@ -85,7 +87,7 @@ const EditBooks = () => {
                 
                     <div className="form-group d-flex">
                         <label htmlFor="namabuku" className="col-md-4">ID buku</label>
-                        <input type="number" name="id" id="namabuku" value={editBook.id} onChange={handleChange} className="form-control"  readOnly/>
+                        <input type="number" name="nobuku" id="namabuku" value={editBook.nobuku} onChange={handleChange} className="form-control"  readOnly/>
                     </div>
                     <div className="form-group d-flex">
                         <label htmlFor="namabuku" className="col-md-4">Nama buku</label>

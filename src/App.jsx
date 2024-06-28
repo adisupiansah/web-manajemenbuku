@@ -4,55 +4,54 @@ import Home from "./Components/Home";
 import BookAvailable from "./Components/BookAvailable";
 import Footer from "./Components/Footer";
 // import rrouter
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddBooks from "./Pages/AddBooks";
 import DetailBuku from "./Pages/DetailBuku";
 import EditBooks from "./Pages/EditBooks";
 import { BooksProvider } from "./Context/BooksContext";
 
 const App = () => {
-
   return (
     <div>
       <BooksProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <NavigasiBar />
-                <Home />
-                <BookAvailable />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <NavigasiBar />
+                  <Home />
+                  <BookAvailable />
+                  <Footer />
+                </>
+              }
+            />
 
-        <Routes>
-          <Route
-            path="/addbooks"
-            element={
-              <>
-                <AddBooks />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
+            <Route
+              path="/addbooks"
+              element={
+                <>
+                  <AddBooks />
+                  <Footer />
+                </>
+              }
+            />
 
-        <Routes>
-          <Route path="/detailbuku/:id" element={
-            <>
-              <DetailBuku />
-              <Footer />
-            </>
-          } />
-        </Routes>
+            <Route
+              path="/detailbuku/:id"
+              element={
+                <>
+                  <DetailBuku />
+                  <Footer />
+                </>
+              }
+            />
 
-        <Routes>
-          <Route path="/editbuku/:id" element={<EditBooks/>}/>
-        </Routes>
+            <Route path="/editbuku/:id" element={<EditBooks />} />
+            
+          </Routes>
+        </Router>
       </BooksProvider>
     </div>
   );
