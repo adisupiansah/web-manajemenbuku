@@ -1,4 +1,4 @@
-import { Container, Row, Col, Table, Card } from "react-bootstrap";
+import { Container, Row, Col, Table } from "react-bootstrap";
 // import books context
 import { useContext } from "react";
 import { BooksContext } from "../Context/BooksContext";
@@ -68,6 +68,7 @@ const BookAvailable = () => {
                     <th className="text-center">Penulis</th>
                     <th className="text-center">Penerbit</th>
                     <th className="text-center">Tahun Buku</th>
+                    <th className="text-center">Upload by</th>
                     <th className="text-center">detail buku</th>
                   </tr>
                 </thead>
@@ -79,6 +80,7 @@ const BookAvailable = () => {
                       <td className="text-center">{book.penulisbuku}</td>
                       <td className="text-center">{book.penerbitbuku}</td>
                       <td className="text-center">{book.tahunterbit}</td>
+                      <td className="text-center">{book.email}</td>
                       <td className="text-center"><Link to={`/detailbuku/${book.id}`} className="bookavailable-eye"><FaRegEye/></Link></td>
                     </tr>
                   ))}

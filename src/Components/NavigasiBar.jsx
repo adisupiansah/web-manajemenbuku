@@ -46,7 +46,7 @@ const NavigasiBar = () => {
               <Nav.Link href="#daftarbuku" className="navbar-link">Daftar Buku</Nav.Link>
               <NavDropdown title={
                 <span className='align-items-center'>
-                  <span className="mx-2">{user ? (user.displayName || user.email) : 'User'}</span>
+                  <span className="mx-2 nav-nameuser">{user ? (user.displayName || user.email) : 'User'}</span>
                                     {user && user.photoURL && (
                                       <img
                                       src={user.photoURL}

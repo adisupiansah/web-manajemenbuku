@@ -40,6 +40,11 @@ body {
     height: 56px;
     margin-right: 13px;
 }
+.nav-nameuser{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white-color);
+}
 
 /* <=========================================> COMPONENT HOME <=========================================>*/
 .clas-home{
@@ -182,6 +187,9 @@ body {
     color: var(--black-color);
 }
 .nav-color .navbar-link{
+    color: var(--black-color);
+}
+.nav-color .nav-nameuser{
     color: var(--black-color);
 }
 
