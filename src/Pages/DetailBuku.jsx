@@ -5,12 +5,14 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { BooksContext } from '../Context/BooksContext' 
+import { AuthContext } from '../Context/AuthProvider'
 
 const DetailBuku = () => {
     // meneriman id dari BooksAvailable
     const {id} = useParams()
     const {books} = useContext(BooksContext)
     const book = books.find((books) => books.id === id)
+    const { user } = useContext(AuthContext)
 
     // validasi jika tidak ada data buku berdasarkan id
     if(!book) {
@@ -95,7 +97,9 @@ const DetailBuku = () => {
                         </div>
                         <div className="col-md-12 line-btn d-flex">
                           <Link target='_blank' to={`${book.linkdownload}`} className='btn'>Lihat Buku</Link>
-                          <Link to={`/editbuku/${book.id}`} className='ms-auto btn'>Edit</Link>
+                          {book.email === user.email && (
+                            <Link to={`/deletebuku/${book.id}`} className='btn'>Hapus Buku</Link>
+                          )}
                         </div>
                         
                     </div>

@@ -1,0 +1,158 @@
+ .login{
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    padding: 0 auto;
+    background-image: url('../assets/imgAuth/bg-register.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Card */
+.card{
+    /* margin-top: 100px; */
+    max-width: 80%;
+    /* height: 100vh; */
+    background: rgba(68, 68, 68, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid #acacac;
+}
+
+/* card image */
+.card-gambar-login{
+    background-image: url('../assets/imgAuth/bg-register.jpg');
+    max-width: 100vh;
+    min-height: 70vh;
+    /* background-color: aqua; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding-right: 50px; */
+}
+
+/* class form input */
+.form input{
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: rgba(68, 68, 68, 0.5);
+    color: #ffff;
+}
+.form input:focus{
+    background: rgba(68, 68, 68, 0.5);
+    color: #ffff;
+    box-shadow: 0 0 10px #AA5CFB;
+    border-color: #AA5CFB;
+}
+.form input::placeholder{
+    color: #ffff;
+}
+
+/* icon form */
+.form .input-with-icon {
+    position: relative;
+  }
+  
+.form .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #ccc; /* Adjust icon color here */
+  }
+/* login with */
+.form .form-control {
+    padding-left: 2.5rem; /* Adjust padding to accommodate icon */
+  }
+  .register-with .btn-register{
+    background-color: #AA5CFB;
+    color: #ffff;
+    border-radius: 4px;
+    padding: 7px;
+    border: none;
+}
+.register-with .icons-google{
+    font-size: 23px;
+}
+.register-with .btn-register:hover{
+    background-color: transparent;
+    color: #ffff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #AA5CFB;
+}
+.register-with p {
+    color: #ffff;
+    margin-top: 25px;
+}
+
+/* clas logo  */
+.logo{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* clas button */
+.tombol-login{
+    margin-top: 20px;
+}
+.tombol-login button{
+    background-color: #AA5CFB;
+    color: #ffff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.tombol-login button:hover{
+    border: 2px solid #AA5CFB;
+    color: #ffff;
+    box-shadow: 0 0 10px #AA5CFB;
+}
+
+/* Login with */
+.login-with p {
+    color: #ffff;
+    margin-top: 25px;
+}
+.login-with i{
+    color: #ffff;
+    font-size: 19px;
+}
+.login-with .circle{
+    background-color: #AA5CFB;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50px;
+}
+
+/* clas sign-up */
+.sign-up{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.sign-up a{
+    color: #ffff;
+    font-weight: 200;
+}
+
+/* layar mobile */
+@media screen and (max-width: 500px) {
+    /* background body */
+    body{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* clas sign up */
+    .sign-up a{
+        font-size: 13px;
+    }
+
+    /* login with */
+    .login-with p{
+        font-size: 14px;
+    }
+
+    /* clas logo */
+    .logo img{
+        width: 25%;
+    }
+}

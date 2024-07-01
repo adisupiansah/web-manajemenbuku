@@ -1,8 +1,9 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
 const Home = () => {
+
+
   return (
     <div className='clas-home d-flex justify-content-center align-items-center vh-100' id='home'>
       <Container>
