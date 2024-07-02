@@ -72,14 +72,12 @@ const App = () => {
               <Route
                 path="/"
                 element={
-                  <Require>
                     <>
                       <NavigasiBar />
                       <Home />
                       <BookAvailable />
                       <Footer />
                     </>
-                  </Require>
                 }
               />
 

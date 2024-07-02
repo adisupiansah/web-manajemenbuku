@@ -2,15 +2,19 @@ import { Container, Row, Col, Table } from "react-bootstrap";
 // import books context
 import { useContext } from "react";
 import { BooksContext } from "../Context/BooksContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
-import $ from 'jquery';
+import $ from 'jquery'; 
 import { useEffect } from "react";
+import { AuthContext } from "../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const BookAvailable = () => {
   // mengambil data buku dari context
   const { books} = useContext(BooksContext);
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate();
 
   // useEffect untuk menggunakan dataTables
  useEffect(() => {
@@ -35,6 +39,26 @@ const BookAvailable = () => {
       </div>
     )
   }
+
+  // validasi jika user inging mengkklik detail buku dan belum login, arahkan user ke halaman login, dan jika user sudah login ingin mengklik detail buku, arahkan user ke halaman detail buku berdasarkan id nya
+  const handleDetailClick = (id) => {
+    if (!user) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Anda harus login terlebih dahulu!',
+        confirmButtonText: 'Login',
+        showCancelButton: true,
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login', { state: { from: `/detailbuku/${id}` } });
+        }
+      });
+    } else {
+      navigate(`/detailbuku/${id}`);
+    }
+  };
 
   return (
     <div className="clas-bookavailable">
@@ -81,7 +105,9 @@ const BookAvailable = () => {
                       <td className="text-center">{book.penerbitbuku}</td>
                       <td className="text-center">{book.tahunterbit}</td>
                       <td className="text-center">{book.email}</td>
-                      <td className="text-center"><Link to={`/detailbuku/${book.id}`} className="bookavailable-eye"><FaRegEye/></Link></td>
+                      <td className="text-center">
+                        <FaRegEye className="bookavailable-eye" onClick={() => handleDetailClick(book.id)} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
