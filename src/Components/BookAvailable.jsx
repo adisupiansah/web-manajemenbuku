@@ -41,7 +41,7 @@ const BookAvailable = () => {
       <Container>
         <Row>
           <Col>
-            <div className="form-search">
+            {/* <div className="form-search">
               <div className="d-flex justify-content-center align-items-center">
                 <div className="bookavailable-input col-6 ">
                   <Card>
@@ -51,7 +51,7 @@ const BookAvailable = () => {
                   </Card>
                 </div>
               </div>
-            </div>
+            </div> */}
           </Col>
         </Row>
 

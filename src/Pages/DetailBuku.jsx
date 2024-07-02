@@ -15,7 +15,7 @@ const DetailBuku = () => {
     const { user } = useContext(AuthContext)
 
     // validasi jika tidak ada data buku berdasarkan id
-    if(!book) {
+    if(!book || book.length === 0) {
         return (
             <div className="clas-detailbuku">
                 <NavigasiBack />
@@ -41,7 +41,7 @@ const DetailBuku = () => {
                     </div>
                 </Col>
                 <Col md={6}>
-                    <div className="detailbuku-table d-flex flex-column justify-content-center align-items-center vh-100">
+                <div className="detailbuku-table d-flex flex-column justify-content-center align-items-center vh-100">
                         <div className="col-md-12 line">
                             <h2>id buku: {book.id}</h2>
                         </div>
@@ -97,9 +97,11 @@ const DetailBuku = () => {
                         </div>
                         <div className="col-md-12 line-btn d-flex">
                           <Link target='_blank' to={`${book.linkdownload}`} className='btn'>Lihat Buku</Link>
+
                           {book.email === user.email && (
-                            <Link to={`/deletebuku/${book.id}`} className='btn'>Hapus Buku</Link>
+                            <Link to={`/editbuku/${book.id}`} className='btn'>Edit Buku</Link>
                           )}
+                          
                         </div>
                         
                     </div>

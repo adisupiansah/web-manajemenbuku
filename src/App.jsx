@@ -22,13 +22,21 @@ import { useContext } from "react";
 import { AuthContext } from "./Context/AuthProvider";
 
 const App = () => {
-
-
   const Require = ({ children }) => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
     if (!user) {
-      return <Navigate to="/login" state={{ from: location }} replace/>;
+      return <Navigate to="/login" state={{ from: location }} replace />;
+    }
+    return children;
+  };
+
+  // buat fungsi jika ada user, tidak boleh balik ke /login lagi
+  const RequireNoLogin = ({ children }) => {
+    const { user } = useContext(AuthContext);
+    const location = useLocation();
+    if (user) {
+      return <Navigate to="/" state={{ from: location }} replace />;
     }
     return children;
   };
@@ -39,8 +47,28 @@ const App = () => {
         <BooksProvider>
           <Router>
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route
+                path="/login"
+                element={
+                  <RequireNoLogin>
+                    <>
+                      <Login />
+                    </>
+                  </RequireNoLogin>
+                }
+              />
+
+              <Route
+                path="/register"
+                element={
+                  <RequireNoLogin>
+                    <>
+                      <Register />
+                    </>
+                  </RequireNoLogin>
+                }
+              />
+
               <Route
                 path="/"
                 element={
@@ -77,7 +105,17 @@ const App = () => {
                 }
               />
 
-              <Route path="/editbuku/:id" element={<EditBooks />} />
+              <Route
+                path="/editbuku/:id"
+                element={
+                  <Require>
+                    <>
+                      <EditBooks />
+                    </>
+                  </Require>
+                }
+              />
+
             </Routes>
           </Router>
         </BooksProvider>

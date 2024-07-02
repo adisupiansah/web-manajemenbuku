@@ -1,12 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap";
 import imgBooks from "../assets/addBooks.png";
 import NavigasiBack from "./NavigasiBack";
-import {useState } from "react";
+import {useState, useContext } from "react";
 import axios from "axios";
 import { API_URL } from "../Format/API";
+import { AuthContext } from "../Context/AuthProvider";
+
 
 const AddBooks = () => {
   // state untuk form input dan datanya akan dikirimkan ke db.json
+  const { user } = useContext(AuthContext);
   const [bookData, setBookData] = useState({
 
     nobuku: '',
@@ -16,7 +19,8 @@ const AddBooks = () => {
     tahunterbit: '',
     banyakhalaman: "",
     bahasabuku: "",
-    linkdownload: ""
+    linkdownload: "",
+    email: user.email
   })
   // state untuk pesan berhasil kirim data ketika tombol di submit
   const [message, setMessage] = useState("")

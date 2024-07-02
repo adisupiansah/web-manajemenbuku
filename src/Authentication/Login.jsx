@@ -81,7 +81,7 @@ const Login = () => {
 
                   <div className="tombol-login justify-content-center align-items-center d-flex">
                     <button type="submit" className="btn col-md-4 col-sm-6">
-                      Create
+                      Login
                     </button>
                   </div>
                 </form>
