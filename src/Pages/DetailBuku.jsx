@@ -43,7 +43,7 @@ const DetailBuku = () => {
                 <Col md={6}>
                 <div className="detailbuku-table d-flex flex-column justify-content-center align-items-center vh-100">
                         <div className="col-md-12 line">
-                            <h2>id buku: {book.id}</h2>
+                            <h2>id buku: {book.nobuku}</h2>
                         </div>
 
                         <div className="col-md-12 line-desc d-flex">
